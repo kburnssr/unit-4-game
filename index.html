@@ -21,20 +21,36 @@
         <p>You win the game by matching your total score to the random number. You lose the game if your total score
             goes above the random number</p><br>
         <p>The value of each crystal is hidden from you until you click on it.</p><br>
-        <p>Each time when the game starts, the game will change the values of each crystal.</p>
-    <div>
-        <h1>
-            var randNumToMatch = math.floor(math.random()*121);
-        </h1>
-<!-- Added link to the jQuery Library -->
+        <p>Each time when the game starts, the game will change the values of each crystal.</p><br><br>
+    </div>
+    <h1 id="randNumToMatch"></h1>
+    <a id="wins">
+        Wins:
+    </a>
+    <b id="losses">
+        Losses:
+    </b>
+    <c>
+        <img id = "red" src = "./assets/images/red.png">
+        <img id = "blue" src = "./assets/images/blue.png">
+        <img id = "yellow" src = "./assets/images/yellow.png">
+        <img id = "green" src = "./assets/images/green.png">        
+    </c>
+
+                    <!-- Added link to the jQuery Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-    var randNumToMatch = math.floor(math.random()*121);
-            if(randNumToMatch >= 19 && randNumToMatch <= 120){
-                numToMatch;
-            }
-        console.log(numToMatch);
-        </script>
+    var wins = 0;
+    var losses = 0;
+    
+    $("#wins").text();
+    var n = Math.floor(Math.random()*121);
+    if(n >= 19 && n <= 120){
+        $('#randNumToMatch').text(n);
+    }
+        console.log('randNumToMatch');
+
+       </script>
  
 
     <!-- Optional JavaScript -->
