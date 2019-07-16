@@ -17,9 +17,9 @@ body {
   float: left;
   margin: 5px;
 }
-header {
+/* {
   background-color: #ff6000;
-/*  border-bottom: 1px solid #9999;*/
+  border-bottom: 1px solid #9999;
   padding: 20 12;
 }
 /*
@@ -35,24 +35,25 @@ header div {
   text-decoration: none;
   background-color: #ff6000;
   color: #fff;
-  box-sizing: borcer-box;
+  box-sizing: border-box;
+}
+
+h1{
+  float: left;
+  padding: 0px;
+  background-color: green;
+  color: black;
+  font-size: 36px;
+  height: 100px;
+  width: 200px;
 }
 /*
-nav{
-  float: right;
-}
 nav a {
   float: left;
   padding: 10px;
   text-decoration: none;
 }
 */
-/*section {
-  clear: both;
-  max-width: 960px; 
-  margin: 0 auto;
-  padding: 20px;
-}*/
 div{
   margin-top: 5px;
   margin-bottom: 50px;
@@ -63,6 +64,13 @@ div{
   font-size: 50%;
   padding-top: 10px;
   width: 300px;
+}
+#randNumToMatch {
+  padding-top: 10px;
+  max-width: 300px; 
+  color: black;
+  font-size: 100%;
+  background-color: green;
 }
 /*h1 {
   margin-top: 0;
