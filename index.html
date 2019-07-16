@@ -23,6 +23,7 @@
         <p>The value of each crystal is hidden from you until you click on it.</p><br>
         <p>Each time when the game starts, the game will change the values of each crystal.</p><br><br>
     </div>
+    <br>
     <h1 id="randNumToMatch"></h1>
     <a id="wins">
         Wins:
@@ -30,20 +31,33 @@
     <b id="losses">
         Losses:
     </b>
+    <br>
     <c>
         <img id = "red" src = "./assets/images/red.png">
         <img id = "blue" src = "./assets/images/blue.png">
         <img id = "yellow" src = "./assets/images/yellow.png">
-        <img id = "green" src = "./assets/images/green.png">        
+        <img id = "green" src = "./assets/images/green.png">
+        <br />        
     </c>
+    <d>
+        Your total score =
+    </d>
+    <br>
+    <br>
+
+    <e id = "yourTotalScore">
+
+    </e>
 
                     <!-- Added link to the jQuery Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
     var wins = 0;
     var losses = 0;
-    
+    var totalScore = losses + wins;
+    $('#yourTotalScore').text(totalScore);    
     $("#wins").text();
+    $("#losses").text();
     var n = Math.floor(Math.random()*121);
     if(n >= 19 && n <= 120){
         $('#randNumToMatch').text(n);
