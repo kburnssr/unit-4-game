@@ -53,7 +53,7 @@ div{
   margin-top: 5px;
   margin-left: 0px;
   float: left;
-  padding: 5px 5px;
+  padding: 5px;
   background-color: beige;
   color: green;
   font-size: 50%;
@@ -73,8 +73,7 @@ div{
   margin-top: 5px;
   margin-left: 10px;
   padding-top: 20px;
-  padding: -10px;
-  text-decoration: none;
+   text-decoration: none;
   background-color: cyan;
   width: 50px;
   height: 50px;
@@ -85,7 +84,7 @@ div{
   float: left;
   margin-top: 55px;
   margin-left: -50px;
-  padding: -10px;
+  padding: 0px;
   text-decoration: none;
   background-color: cyan;
   width: 50px;
@@ -99,7 +98,8 @@ img{
    margin-left: 0px;
 }
 d{
-  margin:  5 auto;
+  margin-left:  0px;
+  margin-bottom: 40px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
@@ -110,13 +110,15 @@ d{
   width: 960px;
   font-size: 50%;
 }
+
 #yourTotalScore {
   position: relative;
-  margin-top: 200px;
-  background-color: teal;
+  padding-top: 0px;
   padding-bottom: 40px;
-  padding-right: 192px;
-  font-size: 36;
+  padding-left: 10px;
+  padding-right: 182px;
+  background-color: teal;
+  margin-top: 100px;
   color: white;
 }
   /*
