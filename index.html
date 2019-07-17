@@ -14,7 +14,7 @@
     <header>
     </header>
  
-     <div>
+     <div id = "instructions">
         <p>You will be given a random number at the start of the game</p><br>
         <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
             total score.</p><br>
@@ -24,26 +24,26 @@
         <p>Each time when the game starts, the game will change the values of each crystal.</p><br><br>
     </div>
     
-    <h1 id="randNumToMatch"></h1>
-    <a id="wins">
+<!--<h1 id="randNumToMatch" class = "clearfix"></h1>-->
+<h1 id="randNumToMatch"></h1>
+    <div id="wins">
         Wins:
-    </a>
-    <b id="losses">
+    </div>  
+    <div id="losses">
         Losses:
-    </b>
-    <br />
-    <c>
+    </div>
+    <br>
+    <div id = "images">
         <img id = "red" src = "./assets/images/red.png">
         <img id = "blue" src = "./assets/images/blue.png">
         <img id = "yellow" src = "./assets/images/yellow.png">
         <img id = "green" src = "./assets/images/green.png">
-        <br />        
-    </c>
-    <d>
+        <br>        
+    </div>
+    <div id = "score-title">
         Your total score =
-    </d>
-    <br />        
-    <e id = "yourTotalScore"></e>
+    </div>
+    <div id = "yourTotalScore"></div>
 
                     <!-- Added link to the jQuery Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -54,11 +54,13 @@
     $('#wins').append(wins);
     $('#losses').append(losses);
     $("#yourTotalScore").text(yourTotalScore);
-   var n = Math.floor(Math.random()*121);
-    if(n >= 19 && n <= 120){
+   var n = Math.floor(Math.random()*(121-19)+19);
+   if(n >= 19 && n <= 120){
         $('#randNumToMatch').text(n);
+    }else{
+
     }
-        console.log('randNumToMatch');
+        console.log(yourTotalScore);
 
        </script>
  

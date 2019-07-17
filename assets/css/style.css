@@ -30,7 +30,6 @@ header div {
 
 */
 #logo{
-  float: left;
   padding: 12px 0px;
   text-decoration: none;
   background-color: #ff6000;
@@ -38,9 +37,7 @@ header div {
   box-sizing: border-box;
 }
 h1{
-  clear: both;
   margin-top: 5px;
-  float: left;
   padding-top: 0px;
   background-color: green;
   color: black;
@@ -48,11 +45,11 @@ h1{
   height: 100px;
   width: 200px;
 }
-div{
+#instructions{
   position: relative;
   margin-top: 5px;
   margin-left: 0px;
-  float: left;
+  margin-bottom: 0px;
   padding: 5px;
   background-color: beige;
   color: green;
@@ -61,30 +58,23 @@ div{
   height: 300px;
 }
 #randNumToMatch {
-  margin-top: 500;
+  position: relative;
+  float: left;
+  margin-top: 5px;
   padding-top: 5px;
+  padding-bottom: 0px;
   max-width: 300px; 
   color: black;
-  font-size: 36;
+  font-size: 36pxs;
+  height: 100px;
   background-color: green;
 }
 #wins {
+  position: relative;
   float: left;
   margin-top: 5px;
-  margin-left: 10px;
-  padding-top: 20px;
-   text-decoration: none;
-  background-color: cyan;
-  width: 50px;
-  height: 50px;
-  color: black;
-  font-size: 50%;
-}
-#losses {
-  float: left;
-  margin-top: 55px;
-  margin-left: -50px;
-  padding: 0px;
+  margin-left: 5px;
+  padding-top: 5px;
   text-decoration: none;
   background-color: cyan;
   width: 50px;
@@ -92,35 +82,56 @@ div{
   color: black;
   font-size: 50%;
 }
+#losses {
+  position: relative;
+  float: left;
+  margin-top: 55px;
+  margin-left: -50px;
+  padding-top: 5px;
+  text-decoration: none;
+  background-color: cyan;
+  width: 50px;
+  height: 50px;
+  color: black;
+  font-size: 50%;
+}
+/*
 img{
    position: relative;
    margin-top:  5px;
    margin-left: 0px;
+   height: 50;
 }
-d{
+*/
+#images{
+  margin-top: 87px;
+  height: 87;
+  max-height: 50;
+}
+#score-title{
   margin-left:  0px;
-  margin-bottom: 40px;
   padding-top: 10px;
-  padding-bottom: 10px;
   padding-left: 10px;
-  padding-right: 100px;
+  margin-bottom: 0;
   background-color: teal;
   color: white;
-  height: 200px;
-  width: 960px;
+  height: 30px;
   font-size: 50%;
 }
 
 #yourTotalScore {
   position: relative;
-  padding-top: 0px;
-  padding-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 182px;
+  padding: 10px;
+  padding-bottom: 50px;
+  margin-top: 4px;
   background-color: teal;
-  margin-top: 100px;
   color: white;
 }
+/*.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+ }
   /*
 section img {
   float: left;
