@@ -7,14 +7,13 @@
     <title>Unit-4-Game</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-        <!--       CrystalsCollector!-->
-        <a href="index.html" id="logo">CrystalCollector!</a>
+    <!--       CrystalsCollector!-->
+    <a href="index.html" id="logo">CrystalCollector!</a>
 </head>
+
 <body>
-    <header>
-    </header>
- 
-     <div id = "instructions">
+
+    <div id="instructions">
         <p>You will be given a random number at the start of the game</p><br>
         <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
             total score.</p><br>
@@ -23,55 +22,74 @@
         <p>The value of each crystal is hidden from you until you click on it.</p><br>
         <p>Each time when the game starts, the game will change the values of each crystal.</p><br><br>
     </div>
-    
-<!--<h1 id="randNumToMatch" class = "clearfix"></h1>-->
-<h1 id="randNumToMatch"></h1>
+
+    <!--<h1 id="randNumToMatch" class = "clearfix"></h1>-->
+    <h1 id="randNumToMatch"></h1>
     <div id="wins">
         Wins:
-    </div>  
+    </div>
     <div id="losses">
         Losses:
     </div>
     <br>
-    <div id = "images">
-        <img id = "red" src = "./assets/images/red.png">
-        <img id = "blue" src = "./assets/images/blue.png">
-        <img id = "yellow" src = "./assets/images/yellow.png">
-        <img id = "green" src = "./assets/images/green.png">
-        <br>        
+    <div id="images">
+        <button class="button" id="red"><img src="./assets/images/red.png"></button>
+        <button class="button" id="blue"><img src="./assets/images/blue.png"></button>
+        <button class="button" id="yellow"><img src="./assets/images/yellow.png"></button>
+        <button class="button" id="green"><img src="./assets/images/green.png"></button>
+        <br>
     </div>
-    <div id = "score-title">
+    <div id="score-title">
         Your total score =
     </div>
-    <div id = "yourTotalScore"></div>
+    <div id="yourTotalScore"></div>
 
-                    <!-- Added link to the jQuery Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-    var wins = 0;
-    var losses = 0;  
-    var yourTotalScore = 0;
-    $('#wins').append(wins);
-    $('#losses').append(losses);
-    $("#yourTotalScore").text(yourTotalScore);
-   var n = Math.floor(Math.random()*(121-19)+19);
-   if(n >= 19 && n <= 120){
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        /*Start of game*/
+        var wins = 0;
+        var losses = 0;
+        var yourTotalScore = 0;
+        var n = Math.floor(Math.random() * (121 - 19) + 19);
+        $('#wins').append(wins);
+        $('#losses').append(losses);
         $('#randNumToMatch').text(n);
-    }else{
+        $("#yourTotalScore").text(yourTotalScore);
+        $('button').on('click', function () {
+            console.log('button clicked'+ button);
+            $("#yourTotalScore").text(yourTotalScore);
+            var n = Math.floor(Math.random() * (121 - 19) + 19);
+            if (n >= 19 && n <= 120) {
+                $('#randNumToMatch').text(n);
+            } else {
+                console.log(randNumToMatch);
+            }
 
-    }
-        console.log(yourTotalScore);
+            if (yourTotalScore == randNumToMatch) {
+                win = win + 1;
+                $('#wins').append(wins);
+                var yourTotalScore = 0;
+            } else if (yourTotalScore < randNumToMatch) {
+                console.log('wins');
+            } else if (yourTotalScore > randNumToMatch) {
+                losses = losses + 1;
+                console.log('losses');
+                $('#losses').append(losses);
+            }
+        })
+/*      <input type="image" id="red" />
+                var type = $(this).attr('data-type'));*/
+    </script>
 
-       </script>
- 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous">
-        
-    </script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+
+        </script>
 
 </body>
 
