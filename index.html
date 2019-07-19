@@ -26,10 +26,10 @@
     <!--<h1 id="randNumToMatch" class = "clearfix"></h1>-->
     <h1 id="randNumToMatch"></h1>
     <div id="wins">
-        Wins:
+        Wins:<span id="wins-value"></span>
     </div>
     <div id="losses">
-        Losses:
+        Losses:<span id="losses-value"></span>
     </div>
     <br>
     <div id="images">
@@ -52,35 +52,41 @@
         var wins = 0;
         var losses = 0;
         var yourTotalScore = 0;
-        var n = Math.floor(Math.random() * (121 - 19) + 19);
-        $('#wins').append(wins);
-        $('#losses').append(losses);
+        var n = 0;
+        var crystalVal = {
+            "red": 0,
+            "blue": 0,
+            "yellow": 0,
+            "green" : 0
+        };
+        var init = function(){
+            n = Math.floor(Math.random() * (121 - 19) + 19);
+            $('#randNumToMatch').text(n);
+            yourTotalScore = 0;
+            for(var k in crystalVal){
+                crystalVal[k] = Math.ceil(Math.random()*19)
+            }
+        };
+        init();
+        $('#wins-value').text(wins);
+        $('#losses-value').text(losses);
         $('#randNumToMatch').text(n);
         $("#yourTotalScore").text(yourTotalScore);
-        $('button').on('click', function () {
-            console.log('button clicked'+ button);
-            $("#yourTotalScore").text(yourTotalScore);
-            var n = Math.floor(Math.random() * (121 - 19) + 19);
-            if (n >= 19 && n <= 120) {
-                $('#randNumToMatch').text(n);
-            } else {
-                console.log(randNumToMatch);
-            }
-
-            if (yourTotalScore == randNumToMatch) {
-                win = win + 1;
-                $('#wins').append(wins);
-                var yourTotalScore = 0;
-            } else if (yourTotalScore < randNumToMatch) {
-                console.log('wins');
-            } else if (yourTotalScore > randNumToMatch) {
+        $('button').on('mousedown', function (e) {
+            var button = $(e.target).parent()[0]; 
+            yourTotalScore += crystalVal[button.id];
+            if (yourTotalScore == n) {
+                wins = wins + 1;
+                $('#wins-value').text(wins);
+                init();
+            } else if (yourTotalScore > n) {
                 losses = losses + 1;
-                console.log('losses');
-                $('#losses').append(losses);
+                $('#losses-value').text(losses);
+                init();
             }
+            $("#yourTotalScore").text(yourTotalScore);
         })
-/*      <input type="image" id="red" />
-                var type = $(this).attr('data-type'));*/
+/*                var type = $(this).attr('data-type'));*/
     </script>
 
 
